@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NomNom.com</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <h1>Menu</h1>
+  <p id="added" hidden></p>
+  <p class="filters">
+    <button class="on" data-veg="">All</button>
+    <button data-veg="1">Veg</button>
+    <button data-veg="0">Non-veg</button>
+  </p>
+  <p class="filters">
+    <button class="on" data-cat="">All items</button>
+    <button data-cat="Starters">Starters</button>
+    <button data-cat="Meals">Meals</button>
+    <button data-cat="Desserts">Desserts</button>
+    <button data-cat="Drinks">Drinks</button>
+  </p>
+  <div id="list"></div>
+  <script type="module" src="/js/home.js"></script>
+</body>
+</html>

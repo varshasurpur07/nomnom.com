@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cart · NomNom.com</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <h1>Cart</h1>
+  <div id="list"></div>
+  <p id="total" class="price"></p>
+  <p><button type="button" class="btn" id="add-addr">Add an address</button></p>
+  <p><textarea id="address" placeholder="Hostel block, room, landmark" hidden></textarea></p>
+  <p><input id="note" placeholder="Note for kitchen (optional)" /></p>
+  <button class="btn" id="place">Place order (pay on delivery)</button>
+  <p class="error" id="err"></p>
+  <script type="module" src="/js/cart.js"></script>
+</body>
+</html>

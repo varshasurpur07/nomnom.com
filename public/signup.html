@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign up · NomNom.com</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <script type="module">
+    import { nav } from "/js/app.js";
+    nav();
+  </script>
+  <h1>Sign up</h1>
+  <form id="f">
+    <input name="name" placeholder="Name" required />
+    <input name="email" type="email" placeholder="Email" required />
+    <input name="password" type="password" placeholder="Password (6+ chars)" required />
+    <input name="hostel" placeholder="Hostel (optional)" />
+    <button class="btn">Create account</button>
+  </form>
+  <p class="error" id="err"></p>
+  <p>Already have an account? <a href="/login.html">Log in</a></p>
+  <script type="module">
+    import { api } from "/js/app.js";
+    document.getElementById("f").onsubmit = async (e) => {
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      try {
+        await api("/api/auth/signup", {
+          method: "POST",
+          body: { name: fd.get("name"), email: fd.get("email"), password: fd.get("password"), hostel: fd.get("hostel") },
+        });
+        location.href = "/";
+      } catch (err) {
+        document.getElementById("err").textContent = err.message;
+      }
+    };
+  </script>
+</body>
+</html>
